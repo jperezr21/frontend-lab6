@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Calendar from './Calendar';
-import Footer from './Footer';
+import Calendar from './Calendar'
 import './css/bootstrap.min.css';
 import './css/small-business.css';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 class App extends React.Component {
   render() {
