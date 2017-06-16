@@ -14,14 +14,59 @@
     			},
     			{
     				name:"Crossfit"
-    			}],
+    			},
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                },
+                {
+                    name:"Crossfit"
+                }],
     		other_activities: [
     			{
     				name:"Zamba"
     			},
     			{
-    				name:"Spinnig"
-    			}]
+    				name:"Spinnig",
+    			},{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                },{
+                    name:"Spinnig",
+                }]
     	};
 
     	color_class = ["w3-hover-red",
@@ -50,49 +95,57 @@
     
 
     	renderItemMyActi = (index, key) => {
-    		return <li key={key} className={this.color_class[index % 14]}>{this.state.my_activities[index].name}</li>;
+    		return <li key={key} className={this.color_class[index % 14]}><span>{this.state.my_activities[index].name}</span>
+                <button type="button" className="btn btn-secondary" style={{padding:'0px 12px'}}>Desinscribirme</button></li>;
     	}    
 
     	renderItemOtherActi = (index, key) => {
-    		return <li key={key} className={this.color_class[index + 7 % 14]}>{this.state.other_activities[index].name}</li>;
+    		return <li key={key} className={this.color_class[(index + 7) % 14]}>{this.state.other_activities[index].name}
+                <button type="button" className="btn btn-secondary" style={{padding:'0px 12px'}}>Inscribirme</button></li>;
     	}    
 
     	render() {
     		
     	    return (
-    	    <div>
-    	        <Navbar />
-    	        <div className="App container">
-    	          	<div className="row">
-    	            	<div className="col-lg-10">
-    		             	<h3>Actividades a las que estoy inscripto</h3>
-    		             	<ul style={{overflow: 'auto', maxHeight: 400}}  className="w3-ul">
-    			             	<ReactList
-    			             		itemRenderer={this.renderItemMyActi}
-    			            		length={this.state.my_activities.length}
-    			            		type='uniform'
-    			             	/>
-    		             	</ul>
-    		             	<h3>Actividades a las que no estoy inscripto</h3>
-    		             	<ul style={{overflow: 'auto', maxHeight: 400}} className="w3-ul">
-    			             	<ReactList
-    			             		itemRenderer={this.renderItemOtherActi}
-    			            		length={this.state.other_activities.length}
-    			            		type='uniform'
-    			             	/>
-    	             		</ul>
-    	             	</div>
-    	            </div>
-    	        
-    		        <footer className="Footer">
-    			        <div className="row">
-    			    	    <div className="col-lg-12">
-    			            	<Footer />
-    			            </div>
-    			        </div>
-    		        </footer>	
-    	      	</div>
-    	    </div>
+            <div>
+                
+        	    <div>
+                   <Navbar />
+                   <div className="App container">
+                       <div className="row">
+                       <div className="col-lg-10">
+                       <h3>Actividades a las que estoy inscripto</h3>
+                       <ul style={{overflow: 'auto', maxHeight: 400}}  className="w3-ul">
+                       <ReactList
+                       itemRenderer={this.renderItemMyActi}
+                       length={this.state.my_activities.length}
+                       type='uniform'
+                       />
+                       </ul>
+                       <h3>Actividades a las que no estoy inscripto</h3>
+                       <ul style={{overflow: 'auto', maxHeight: 400}} className="w3-ul">
+                       <ReactList
+                       itemRenderer={this.renderItemOtherActi}
+                       length={this.state.other_activities.length}
+                       type='uniform'
+                       />
+                       </ul>
+                       </div>
+                       </div>
+
+
+                   </div>
+
+
+               </div>
+               <footer className="Footer">
+                    <div className="row">
+                       <div className="col-lg-12">
+                        <Footer />
+                       </div>
+                   </div>
+                </footer> 
+            </div>
     	    );
     	}
     }    
